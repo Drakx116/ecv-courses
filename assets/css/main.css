@@ -1,0 +1,40 @@
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.game-section {
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+}
+
+#fish-section {
+    background-color: snow;
+}
+
+#bridge-section {
+    background-color: rgba(151, 79, 42, 0.88);
+}
+
+#igloo-section {
+    background-color: rgba(5, 4, 46, 0.85);
+}
+
+.animal-icon {
+    width: 50px;
+    height: 50px;
+    padding: 16px;
+}
+
+.animal-icon:hover {
+    transition: width 0.2s;
+}
