@@ -63,4 +63,10 @@ html, body {
 .selection > img {
     width: 32px;
     height: 32px;
+    display: block;
+    margin: auto;
+}
+
+.selection > button {
+    margin-top: 16px;
 }
