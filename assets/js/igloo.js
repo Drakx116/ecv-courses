@@ -73,7 +73,7 @@ guiAnimals.map(animal => {
 });
 
 const game = () => {
-  let pilars = 6;
+  let pillars = 6;
 
   const animal = animals[3];
   const diceScore = launchDice();
@@ -91,8 +91,8 @@ const game = () => {
   }
 
   if (action === actions.ICE) {
-    pilars--;
-    console.log(pilars);
+    pillars--;
+    console.log(pillars);
   }
 
   animals.map(animal => console.log(animal.getName(), animal.getPosition()));
