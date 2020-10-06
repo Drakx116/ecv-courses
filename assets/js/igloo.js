@@ -1,4 +1,4 @@
-// Animals
+// Animal
 
 const Animal = function(name)
 {
@@ -9,7 +9,21 @@ const Animal = function(name)
   this.getName = () => this.name;
   this.getPosition = () => this.position;
 
-  this.goForward = () => this.position++;
+  this.goForward = () => {
+    const animal = document.getElementById(this.name);
+    if (this.position === 0) {
+      document.getElementById('fish-section').removeChild(animal);
+      document.getElementById('bridge-section').appendChild(animal);
+    }
+    else {
+      document.getElementById('bridge-section').removeChild(animal);
+      document.getElementById('igloo-section').appendChild(animal);
+    }
+
+    this.position++;
+  };
+
+
   this.setSafe = () => this.safe = true;
   this.isSafe = () => this.position === 2;
 };
@@ -34,18 +48,36 @@ const getActionFromDiceScore = (score) => {
 // Init game variables
 
 const animals = [
-  new Animal('Lapin'),
-  new Animal('Renard'),
-  new Animal('Ours'),
-  new Animal('Pinguin'),
+  new Animal('bear'),
+  new Animal('fox'),
+  new Animal('penguin'),
+  new Animal('rabbit'),
 ];
+
+// GUI EVENTS
+
+
+const bear = document.getElementById('bear');
+const fox = document.getElementById('fox');
+const penguin = document.getElementById('penguin');
+const rabbit = document.getElementById('rabbit');
+
+const selectedImage = document.getElementById('select-image');
+
+const guiAnimals = [ bear, fox, penguin, rabbit ];
+
+guiAnimals.map(animal => {
+  animal.addEventListener('click', () => {
+    selectedImage.setAttribute('src', 'assets/img/' + animal.getAttribute('id') + '.png')
+  });
+});
 
 const game = () => {
   let pilars = 6;
-  // TODO : Update with GUI select
+
   const animal = animals[3];
   const diceScore = launchDice();
-  let action = getActionFromDiceScore(diceScore);
+  const action = getActionFromDiceScore(diceScore);
   console.log(action);
 
   if (action === actions.BRIDGE && animal.getPosition() === 0) {
@@ -66,5 +98,4 @@ const game = () => {
   animals.map(animal => console.log(animal.getName(), animal.getPosition()));
 };
 
-game();
-
+document.getElementById('play-button').addEventListener('click', () => game());
