@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <title> Sandbox </title>
 </head>
@@ -10,12 +11,19 @@
 <div id="container">
     <section id="menu">
         <form id="action-form">
-            <label> Width <input type="number"></label>
-            <label> Height <input type="number"></label>
+            <label>
+                <span> Width </span>
+                <input id="width-select" type="range" min="0" max="1000" step="10">
+            </label>
+
+            <label>
+                <span> Height </span>
+                <input id="height-select" type="range" min="0" max="800" step="10">
+            </label>
         </form>
     </section>
     <section id="sandbox">
-        SANDBOX
+        <div id="box"></div>
     </section>
 </div>
 
