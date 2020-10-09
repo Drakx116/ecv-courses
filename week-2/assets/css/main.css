@@ -206,10 +206,12 @@
     70% {
         width: 20px;
         margin-left: 5em;
+        margin-top: 1em;
     }
 
     100% {
         width: 20px;
         margin-left: 5em;
+        margin-top: 1em;
     }
 }
