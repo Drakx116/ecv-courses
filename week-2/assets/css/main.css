@@ -124,6 +124,7 @@
     height: 36px;
     border-radius: 44% 56% 48% 52% / 32% 26% 74% 68% ;
     background-color: black;
+    animation: mouth infinite 8s;
 }
 
 #accessory {
@@ -133,6 +134,7 @@
     margin-top: 1em;
     margin-left: 7em;
     background-color: white;
+    animation: accessory infinite 8s;
 }
 
 #accessory:before {
@@ -160,4 +162,54 @@
     height: 2em;
     margin: 0;
     border-top: 12px solid white;
+}
+
+
+
+
+/* ANIMATIONS */
+
+@keyframes mouth {
+    0% {
+        width: 70px;
+        height: 36px;
+        border-radius: 44% 56% 48% 52% / 32% 26% 74% 68% ;
+    }
+    40% {
+        width: 20px;
+        height: 20px;
+        border-radius: 2em;
+    }
+    70% {
+        width: 70px;
+        height: 36px;
+        border-radius: 44% 56% 48% 52% / 32% 26% 74% 68% ;
+    }
+
+    100% {
+        width: 70px;
+        height: 36px;
+        border-radius: 44% 56% 48% 52% / 32% 26% 74% 68% ;
+    }
+}
+
+@keyframes accessory {
+    0% {
+        width: 80px;
+    }
+    40% {
+        width: 20px;
+        margin-left: 2em;
+        margin-top: 6px;
+    }
+
+    70% {
+        width: 20px;
+        margin-left: 5em;
+    }
+
+    100% {
+        width: 20px;
+        margin-left: 5em;
+    }
 }
