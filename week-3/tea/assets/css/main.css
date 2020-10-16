@@ -111,3 +111,9 @@ main {
     text-decoration: underline;
     cursor: pointer;
 }
+
+h2 {
+    margin: 1em 1em 0;
+    font-family: "Century Gothic", serif;
+    font-size: 55px;
+}
