@@ -1,86 +1,94 @@
 const path = window.location.href + 'resources/fr_FR.txt';
 
-// TODO : Rework get word from file logic (Promise issue)
-const mysteryWord = 'Mystery';
+const getWordsFromFile = async () => await fetch(path).then( res => res.text() );
 
-const splitWord = mysteryWord.toLowerCase().split('');
-const word = [];
+const game = async () => {
+ const words = await getWordsFromFile();
+ const parts = words.split('\r\n');
+ const random = Math.floor(Math.random()* (parts.length-1));
+ const mysteryWord = parts[random];
 
-splitWord.map((letter) => {
- word.push({ 'letter': letter, 'found': false });
-});
+ const splitWord = mysteryWord.toLowerCase().split('');
+ const word = [];
 
-let count = 0;
-let remainingLives = 7;
-let hasWon = false;
-const givenLetters = [];
+ splitWord.map((letter) => {
+  word.push({ 'letter': letter, 'found': false });
+ });
 
-// GAME LOOP
+ let count = 0;
+ let remainingLives = 7;
+ let hasWon = false;
+ const givenLetters = [];
 
-while (remainingLives) {
- // Gets a valid letter from the user
- let userLetter = {};
- while (userLetter.length !== 1) {
-  userLetter = window.prompt('Veuillez saisir une lettre : ');
- }
+ // GAME LOOP
 
- console.log(userLetter);
-
- // Loose a live if the letter has already been played.
- if (givenLetters.includes(userLetter)) {
-  console.log('This letter has already been played.');
-  remainingLives--;
-  console.log('Remaining lives : ' + remainingLives);
-  continue;
- }
-
- if (!remainingLives) {
-  break;
- }
-
- givenLetters.push(userLetter);
-
- // Searches for the letter in the word.
- let isLetterInWord = false;
- word.map((object, index) => {
-  if(userLetter === object.letter && !object.found) {
-   word[index].found = true;
-   count++;
-   isLetterInWord = true;
+ while (remainingLives) {
+  // Gets a valid letter from the user
+  let userLetter = {};
+  while (userLetter.length !== 1) {
+   userLetter = window.prompt('Veuillez saisir une lettre : ');
   }
- });
 
- // Loose a live if the letter is not in the word.
- if (!isLetterInWord) {
-  console.log('NOPE');
-  remainingLives--;
-  console.log('Remaining lives : ' + remainingLives);
-  continue;
+  console.log(userLetter);
+
+  // Loose a live if the letter has already been played.
+  if (givenLetters.includes(userLetter)) {
+   console.log('This letter has already been played.');
+   remainingLives--;
+   console.log('Remaining lives : ' + remainingLives);
+   continue;
+  }
+
+  if (!remainingLives) {
+   break;
+  }
+
+  givenLetters.push(userLetter);
+
+  // Searches for the letter in the word.
+  let isLetterInWord = false;
+  word.map((object, index) => {
+   if(userLetter === object.letter && !object.found) {
+    word[index].found = true;
+    count++;
+    isLetterInWord = true;
+   }
+  });
+
+  // Loose a live if the letter is not in the word.
+  if (!isLetterInWord) {
+   console.log('NOPE');
+   remainingLives--;
+   console.log('Remaining lives : ' + remainingLives);
+   continue;
+  }
+
+  // Victory if all letters have been found.
+  if (count === 7) {
+   hasWon = true;
+   break;
+  }
+
+  // Logs the game board
+  let response = '';
+  word.map(object => {
+   response += ' ' + ((object.found) ? object.letter.toUpperCase() : '_') + ' ';
+  });
+  console.log(response);
  }
 
- // Victory if all letters have been found.
- if (count === 7) {
-  hasWon = true;
-  break;
+ const message = (hasWon) ? 'Victory' : 'Defeat';
+ alert(message);
+
+ if(!hasWon) {
+  let mysteryWord = '';
+  word.map(object => {
+   mysteryWord += object.letter.toUpperCase();
+  });
+
+  console.log(mysteryWord);
  }
+};
 
- // Logs the game board
- let response = '';
- word.map(object => {
-  response += ' ' + ((object.found) ? object.letter.toUpperCase() : '_') + ' ';
- });
- console.log(response);
-}
-
-const message = (hasWon) ? 'Victory' : 'Defeat';
-alert(message);
-
-if(!hasWon) {
- let mysteryWord = '';
- word.map(object => {
-  mysteryWord += object.letter.toUpperCase();
- });
-
- console.log(mysteryWord);
-}
+game();
 
