@@ -90,3 +90,24 @@ header {
     background-color: var(--color-white-transparent);
 }
 
+
+
+/** MAIN **/
+
+main {
+    display: block;
+    width: calc(80% - 2em);
+    margin: 1em auto;
+    padding: 0 1em;
+}
+
+#breadcrumb {
+    margin: 0 2em;
+    font-family: "Century Gothic", serif;
+    font-size: 20px;
+}
+
+.breadcrumb-link {
+    text-decoration: underline;
+    cursor: pointer;
+}
