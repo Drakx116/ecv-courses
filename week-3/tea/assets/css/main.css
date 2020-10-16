@@ -112,14 +112,23 @@ main {
     cursor: pointer;
 }
 
-h2 {
+#article-titre {
     margin: 0.6em 1em 0;
     font-family: "Century Gothic", serif;
     font-size: 55px;
     font-weight: bold;
 }
 
+
+
+
 /* ARTICLE CONTAINER */
+
+/* COMMON WIH OTHER CONTAINER */
+.sub-title {
+    font-family: "Century Gothic", serif;
+    font-size: 40px;
+}
 
 .container {
     width: calc(100% - 4em);
@@ -164,7 +173,10 @@ h2 {
     width: calc(100% / 3 - 3px);
 }
 
-/** DESCRIPTION**/
+
+
+
+/** TOP DESCRIPTION**/
 
 #description-container {
     display: flex;
@@ -172,10 +184,6 @@ h2 {
     width: calc(30% - 2em);
     padding: 1em;
     font-family: "Century Gothic", serif;
-}
-
-h3 {
-    font-size: 40px;
 }
 
 #description-container p {
