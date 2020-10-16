@@ -1,14 +1,92 @@
-/* COLORS */
+/** COLORS **/
+
 :root {
     --color-white: #FFFFFF;
     --color-green: #4D834C;
     --color-grey: #E5E5E5;
     --color-black: #000000;
+    --color-white-transparent: #FFFFFFCC;
 }
+
+
+/** GLOBAL **/
 
 html, body {
     width: 100%;
     margin: 0;
     padding: 0;
+}
+
+
+
+/** HEADER **/
+
+header {
+    display: block;
+}
+
+#header-top {
+    display: flex;
+    align-items: center;
+    width: calc(80% - 2em);
+    margin: auto;
+    padding: 1.5em 1em;
+}
+
+#header-logo {
+    width: 95px;
+}
+
+#header-title {
+    font-family: 'Century Gothic', serif;
+    font-size: 80px;
+    padding: 0 0.25em;
+    text-transform: lowercase;
+}
+
+#header-hamburger {
+    display: none;
+}
+/* NAV */
+
+#header-nav {
+    display: block;
+    padding: 0.5em 0 0 0;
+    background-color: var(--color-green);
+}
+
+#header-nav ul {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+#header-nav li {
+    margin: 0 1em;
+    padding: 2.5em 2em;
+}
+
+#header-nav a:first-of-type {
+    margin-left: 0;
+}
+
+#header-nav a {
+    font-family: "Century Gothic", serif;
+    font-size: 20px;
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: 60px 60px 0 0;
+    margin: 0 1em;
+    padding: 2.5em 2em;
+    transition: ease-out 0.2s;
+}
+
+#header-nav a[aria-current="page"] {
+    font-weight: bold;
+}
+
+#header-nav a:hover {
+    color: var(--color-green);
+    background-color: var(--color-white-transparent);
 }
 
