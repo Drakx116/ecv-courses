@@ -128,6 +128,7 @@ main {
 .sub-title {
     font-family: "Century Gothic", serif;
     font-size: 40px;
+    display: block;
 }
 
 .container {
@@ -236,4 +237,20 @@ main {
 #socials {
     display: flex;
     justify-content: end;
+}
+
+
+
+/** PRODUCTS **/
+
+aside #sub-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#products-container {
+    width: calc(100% - 4em);
+    padding: 2em;
+    display: block;
+    background-color: cornflowerblue;
 }
