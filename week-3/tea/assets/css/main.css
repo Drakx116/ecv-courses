@@ -147,7 +147,6 @@ main {
 }
 
 .sub-container {
-
     display: flex;
     background-color: var(--color-white);
 }
@@ -173,8 +172,8 @@ main {
 
 #other-images-container {
     max-width: 100%;
-    /*display: flex;*/
-    /*justify-content: space-between;*/
+    display: flex;
+    justify-content: space-between;
     position: relative;
 }
 
@@ -401,13 +400,37 @@ footer {
 
     #breadcrumb {
         font-size: 15px;
-        margin-left: 2em;
+        margin-left: 20px;
     }
 
     #article-titre {
-        margin: 0.5em;
+        margin-left: 20px;
         font-family: "Century Gothic", serif;
-        font-size: 55px;
+        font-size: 35px;
         font-weight: bold;
+    }
+
+    .container {
+        width: calc(100% - 2em);
+        padding: 1em;
+    }
+
+
+    /* IMAGES */
+
+    .sub-container {
+        width: 100%;
+        display: block;
+    }
+
+    #image-container {
+        width: calc(100% - 2em);
+    }
+
+
+    /* TOP DESCRIPTION */
+
+    #description-container {
+        width: calc(100% - 4em);
     }
 }
