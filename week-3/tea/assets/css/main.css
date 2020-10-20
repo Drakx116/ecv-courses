@@ -248,9 +248,38 @@ aside #sub-container {
     flex-direction: column;
 }
 
-#products-container {
-    width: calc(100% - 4em);
-    padding: 2em;
+#product-sub-container {
     display: block;
-    background-color: cornflowerblue;
+    margin-top: 1em;
+}
+
+#product-sub-container .sub-title {
+    padding: 0.5em;
+}
+
+#products-container {
+    width: 100%;
+    padding-bottom: 2em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-image-container {
+    max-width: 20%;
+    margin: 0 0.5em;
+}
+
+.product-image-container img {
+    max-width: 100%;
+    transition: ease-out 0.3s;
+}
+
+.product-image-container img:hover {
+    box-shadow: 0 -1px 10px -2px var(--color-grey);
+}
+
+.product-image-container p {
+    text-align: center;
+    font-family: "Century Gothic", serif;
+    font-size: 20px;
 }
