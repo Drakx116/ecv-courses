@@ -34,6 +34,7 @@ header {
 
 .header-content {
     display: flex;
+    align-items: center;
 }
 
 .header-content:last-child {
