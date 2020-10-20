@@ -27,10 +27,17 @@ header {
 
 #header-top {
     display: flex;
-    align-items: center;
     width: calc(80% - 2em);
     margin: auto;
     padding: 1.5em 1em;
+}
+
+.header-content {
+    display: flex;
+}
+
+.header-content:last-child {
+    margin-left: auto;
 }
 
 #header-logo {
@@ -328,4 +335,35 @@ footer {
     margin-top: 8px;
     color: var(--color-white);
     cursor: pointer;
+}
+
+@media only screen and (max-width: 1400px) {
+    #price {
+        font-size: 68px;
+    }
+
+    #order-button {
+        font-size: 32px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #header-top {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-content {
+        padding: 1em;
+    }
+
+    #header-hamburger {
+        display: flex;
+        width: 52px;
+    }
+
+    #header-nav ul {
+        display: none;
+    }
 }
