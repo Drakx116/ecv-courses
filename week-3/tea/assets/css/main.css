@@ -283,3 +283,49 @@ aside #sub-container {
     font-family: "Century Gothic", serif;
     font-size: 20px;
 }
+
+
+
+/** FOOTER **/
+
+footer {
+    background-color: var(--color-green);
+}
+
+#footer-container {
+    display: flex;
+    width: calc(70% - 4em);
+    margin: auto;
+    padding: 1em 0;
+    justify-content: center;
+}
+
+#footer-container section {
+    padding: 1em 2em;
+    font-family: "Century Gothic", serif;
+}
+
+#footer-container section:last-child {
+    border-left: 1px solid var(--color-white);
+}
+
+.footer-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--color-white);
+}
+
+.footer-links {
+    margin-top: 1em;
+}
+
+.footer-links a {
+    text-decoration: none;
+}
+
+.footer-links li {
+    font-size: 17px;
+    margin-top: 8px;
+    color: var(--color-white);
+    cursor: pointer;
+}
