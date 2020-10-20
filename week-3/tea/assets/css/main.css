@@ -359,9 +359,20 @@ footer {
         padding: 1em;
     }
 
+    #header-logo {
+        width: 48px;
+    }
+
+    #header-title {
+        font-family: 'Century Gothic', serif;
+        font-size: 44px;
+        padding: 0 0.25em;
+        text-transform: lowercase;
+    }
+
     #header-hamburger {
         display: flex;
-        width: 52px;
+        width: 40px;
     }
 
     #header-nav ul {
