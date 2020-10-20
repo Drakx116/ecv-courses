@@ -214,6 +214,8 @@ main {
     color: var(--color-green);
 }
 
+
+
 /** BOTTOM DESCRIPTION **/
 
 #bottom-description {
@@ -338,7 +340,11 @@ footer {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 1400px) {
+
+
+
+@media only screen and (max-width: 1400px)
+{
     #price {
         font-size: 68px;
     }
@@ -348,7 +354,12 @@ footer {
     }
 }
 
-@media only screen and (max-width: 1200px) {
+
+
+@media only screen and (max-width: 1200px)
+{
+    /* HEADER */
+
     #header-top {
         width: 100%;
         margin: 0;
@@ -377,5 +388,26 @@ footer {
 
     #header-nav ul {
         display: none;
+    }
+
+
+    /* MAIN  */
+
+    main {
+        width: 100%;
+        margin: 2em 0 0 0;
+        padding: 0 0;
+    }
+
+    #breadcrumb {
+        font-size: 15px;
+        margin-left: 2em;
+    }
+
+    #article-titre {
+        margin: 0.5em;
+        font-family: "Century Gothic", serif;
+        font-size: 55px;
+        font-weight: bold;
     }
 }
