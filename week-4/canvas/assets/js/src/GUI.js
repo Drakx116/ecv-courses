@@ -10,8 +10,9 @@ class GUI
 
   drawBall = (ball) => {
     canvas.beginPath();
+    canvas.fillStyle = "#FFFFFF";
     canvas.arc(ball.pos.x, ball.pos.y, ball.radius, 0, LOOP);
-    canvas.stroke();
+    canvas.fill();
     canvas.save();
   };
 }
