@@ -1,0 +1,15 @@
+html, body {
+    overflow: hidden;
+}
+
+.container {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#canvas {
+    background-color: red;
+}
