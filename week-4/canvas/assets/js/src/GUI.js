@@ -18,7 +18,7 @@ class GUI
 
   drawBar = bar => {
     this.canvas.fillStyle = "#FFFFFF";
-    this.canvas.rect(WIDTH / 2 - bar.offset.x, HEIGHT / 2 - bar.offset.y / 2 + bar.pos.y, 2 * bar.offset.x, bar.offset.y);
+    this.canvas.rect(WIDTH / 2 - bar.offset.x + bar.pos.x, HEIGHT / 2 - bar.offset.y / 2 + bar.pos.y, 2 * bar.offset.x, bar.offset.y);
     this.canvas.fill();
     this.canvas.save();
   }

@@ -10,4 +10,18 @@ class Bar
       y: 10
     };
   }
+
+  handleMovements = gui => {
+    window.onkeypress = ({ key }) => {
+      if (key === 'd') {
+        this.pos.x += 6;
+        gui.drawBall(this);
+      }
+
+      if (key === 'q') {
+        this.pos.x -= 6;
+        gui.drawBall(this);
+      }
+    };
+  }
 }

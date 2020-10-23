@@ -11,5 +11,5 @@ const animation = () => {
   gui.drawBar(bar);
 };
 
+bar.handleMovements(gui);
 setInterval(animation, 1000 / MAX_IPS);
-animation();
