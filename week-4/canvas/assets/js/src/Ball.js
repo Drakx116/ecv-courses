@@ -3,7 +3,7 @@ class Ball
   constructor() {
     this.pos = { x: WIDTH  / 2, y: HEIGHT / 2 };
     this.speed = { 'x': 2, 'y': 2 };
-    this.radius = 20;
+    this.radius = 14;
   };
 
   move = () => {
