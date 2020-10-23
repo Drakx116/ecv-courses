@@ -12,4 +12,13 @@ html, body {
 
 #canvas {
     background-color: red;
+    transition: ease-out 5s;
+}
+
+#canvas:hover {
+    animation: rotate 4s;
+}
+
+@keyframes rotate {
+    /* TODO : ADD BONUS */
 }
