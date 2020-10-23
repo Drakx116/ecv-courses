@@ -224,6 +224,10 @@ main {
     justify-content: end;
 }
 
+.bottom-description-content {
+    text-align: center;
+}
+
 #price {
     display: block;
     text-align: center;
@@ -235,7 +239,7 @@ main {
 
 #order-button {
     margin-bottom: 2em;
-    padding: 0.5em 0;
+    padding: 0.5em 1em;
     font-family: "Century Gothic", serif;
     font-size: 40px;
     border: 0;
@@ -432,5 +436,9 @@ footer {
 
     #description-container {
         width: calc(100% - 4em);
+    }
+
+    #bottom-description {
+        flex-direction: row-reverse;
     }
 }
