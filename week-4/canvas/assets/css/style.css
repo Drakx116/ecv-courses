@@ -11,7 +11,7 @@ html, body {
 }
 
 #canvas {
-    background-color: red;
+    background-image: url("../img/background.jpeg");
     transition: ease-out 5s;
 }
 
