@@ -1,0 +1,22 @@
+.container{
+    /* creer une grille de 10 columns sur toute la largeurs, avec columns impaires qui prennent 2 fois plus de free space  */
+
+    /*creer une grille avec 10 rows de 50px de hauteur*/
+
+    /*ajouter un espace entre les items de 1em;*/
+}
+
+
+/* item 1 : commence à col3 et finis à col 5*/
+
+/* item 2 : commence à col 5 et finis à la denière col*/
+
+/* item 5 : span sur 2 cols et 2 lignes*/
+
+/* item 8 : 2 lignes de hauteur*/
+
+/* item 15 : sur toute la largeurs*/
+
+/* item 18 : span 4 et finis à col 9*/
+
+/* item 20 : commence a ligne 4 et fait 3 de haut*/
