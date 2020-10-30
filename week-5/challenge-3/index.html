@@ -7,11 +7,63 @@
 
 <body>
   <header>
-    <div id="header-left"></div>
-    <div id="header-right"></div>
+    <div id="header-left">
+      <h1><img src="assets/img/logo.png" alt="Prime Vidéo"></h1>
+      <nav>
+          <ul>
+            <li><a href=""> Accueil </a></li>
+            <li><a href=""> Boutique </a></li>
+            <li><a href=""> Chaînes </a></li>
+            <li><a href=""> Catgégories </a></li>
+            <li><a href=""> Mes vidéos </a></li>
+          </ul>
+      </nav>
+    </div>
+    
+    <div id="header-right">
+      <div class="search-bar">
+        <form action="/src/search.php" method="POST">
+          <label for="research">
+            <input type="text" id="research" name="research">
+          </label>
+          <input type="submit" value="🔍">
+        </form>
+      </div>
+      <div class="account">
+        <img src="assets/img/avatar.png" alt="Avatar">
+        <span id="navbar-username"> Mr Pickles </span>
+      </div>
+    </div>
   </header>
 
-  <aside></aside>
-  <footer></footer>
+  <aside>
+    <figure>
+        <img src="image.jpg" alt="" />
+        <figcaption>Légende associée</figcaption>
+    </figure>
+    <figure>
+        <img src="image.jpg" alt="" />
+        <figcaption>Légende associée</figcaption>
+    </figure>
+    <figure>
+        <img src="image.jpg" alt="" />
+        <figcaption>Légende associée</figcaption>
+    </figure>
+    <figure>
+        <img src="image.jpg" alt="" />
+        <figcaption>Légende associée</figcaption>
+    </figure>
+  </aside>
+  <footer>
+    <img src="assets/img/logo.png" alt="Prime Vidéo">
+    <nav>
+        <ul>
+            <li><a href="">Conditions générales et avis de confidentialité</a></li>
+            <li><a href="">Contactez-nous</a></li>
+            <li><a href="">Aide</a></li>
+            <li>© 1996-2020. Amazon.com,Inc ou ses filiales</li>
+        </ul>
+    </nav>
+  </footer>
 </body>
 </html>
