@@ -4,7 +4,6 @@ const Animal = function(name)
 {
   this.name = name.toLowerCase();
   this.position = 0;
-  this.safe = false;
 
   this.getName = () => this.name;
   this.getPosition = () => this.position;
@@ -23,9 +22,14 @@ const Animal = function(name)
     this.position++;
   };
 
-
-  this.setSafe = () => this.safe = true;
   this.isSafe = () => this.position === 2;
+};
+
+const getIdByName = (name) => {
+  if (name === 'bear') return 0;
+  if (name === 'fox') return 1;
+  if (name === 'penguin') return 2;
+  if (name === 'rabbit') return 3;
 };
 
 // Dice management
@@ -56,7 +60,6 @@ const animals = [
 
 // GUI EVENTS
 
-
 const bear = document.getElementById('bear');
 const fox = document.getElementById('fox');
 const penguin = document.getElementById('penguin');
@@ -68,14 +71,19 @@ const guiAnimals = [ bear, fox, penguin, rabbit ];
 
 guiAnimals.map(animal => {
   animal.addEventListener('click', () => {
-    selectedImage.setAttribute('src', 'assets/img/' + animal.getAttribute('id') + '.png')
+    selectedImage.setAttribute('src', 'assets/img/' + animal.getAttribute('id') + '.png');
+    selectedImage.setAttribute('id', getIdByName(animal.getAttribute('id')));
   });
 });
+
+selectedImage.setAttribute('src', 'assets/img/bear.png');
+selectedImage.setAttribute('id', 0)
 
 const game = () => {
   let pillars = 6;
 
-  const animal = animals[3];
+  selectedImage.getAttribute('id');
+  const animal = animals[selectedImage.getAttribute('id')];
   const diceScore = launchDice();
   const action = getActionFromDiceScore(diceScore);
   console.log(action);
@@ -86,7 +94,7 @@ const game = () => {
   }
 
   if (action === actions.IGLOO && animal.getPosition() === 1) {
-    animal.setSafe();
+    animal.goForward();
     console.log('Is animal safe : ', animal.isSafe());
   }
 
