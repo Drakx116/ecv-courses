@@ -11,11 +11,27 @@
         <label for="word"> Word
             <input type="text" id="word" placeholder="Ex: Car, House ...">
         </label>
-        <label> Multiplier
-            <input type="range" min="1" max="3" value="1">
-        </label>
+
+        <span> Multiplier </span>
+        <div id="form-radio-container">
+            <div>
+                <input type="radio" id="simple" name="simple" value="simple" checked>
+                <label for="simple">Simple</label>
+            </div>
+            <div>
+                <input type="radio" id="double" name="double" value="double">
+                <label for="double">Double</label>
+            </div>
+            <div>
+                <input type="radio" id="triple" name="triple" value="triple">
+                <label for="triple">Triple</label>
+            </div>
+        </div>
+
+        <input id="form-submit-btn" type="submit" value="Calculate Score">
     </form>
 </section>
 
+<script src="assets/js/scrabble.js"></script>
 </body>
 </html>
