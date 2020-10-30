@@ -1,0 +1,22 @@
+/*grid-template-columns: 100px auto 500px 200px;*/
+
+/*display: grid;*/
+/*grid-template-columns: repeat(5, 100px);*/
+/*grid-template-rows: 100px 200px 400px;*/
+/*grid-auto-flow: row;*/
+/*grid-auto-rows: 200px;*/
+/*grid-gap: 1em;*/
+
+.container {
+    display: grid;
+    /*grid-template-columns: repeat(4, 25%);*/
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1em;
+}
+
+.item:nth-child(3) {
+    grid-column-start: 4;
+    grid-row-start: 2;
+    grid-column: span 2;
+    grid-row: span 3;
+}

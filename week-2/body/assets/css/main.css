@@ -1,0 +1,233 @@
+/* GLOBAL */
+
+
+* {
+    box-sizing: border-box;
+    --skin-color: #656abc;
+}
+
+
+
+/* FACE */
+
+#face {
+    width: 500px;
+    height:  1em;
+    margin: 1em auto auto;
+}
+
+#face::after {
+
+}
+
+
+
+/* HAIRS */
+
+#hairs {
+    position: relative;
+    height: 6em;
+    background-color: black;
+    border-radius: 37.5% 37.5% 0 0 / 50% 50% 0 0;
+}
+
+#hairs::after {
+    position: absolute;
+    height: 4em;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    content: '';
+    background-color: var(--skin-color);
+    border-radius: 37.5% 37.5% 0 0 / 50% 50% 0 0;
+}
+
+
+
+/* EYES */
+
+#eyes-container {
+    display: flex;
+    justify-content: center;
+    background-color: var(--skin-color);
+    padding-bottom: 1em;
+}
+
+.eye-brown {
+    height: 4px;
+    background-color: black;
+    transform: rotateZ(-2deg);
+    margin-bottom: 1.5em;
+}
+
+#eyes-container .eyes:first-child .eye-brown {
+    height: 4px;
+    background-color: black;
+    transform: rotateZ(2deg);
+}
+
+.eyes {
+    padding: 0 2em;
+    position: relative;
+}
+
+.eyes::before {
+    content: '';
+    position: absolute;
+    width: 46px;
+    height: 48px;
+    background-color: #3e4498;
+    border: 1px solid #3e4498;
+    border-bottom: 2px solid #3e4498;
+    top: 1em;
+    border-radius: 50% 50% 50% 50% / 85% 85% 15% 15%;
+}
+
+.eye {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 96px;
+    background-color: rgba(255, 136, 97, 0.6);
+    border-radius: 50% 50% 50% 50% / 35% 35% 65% 65%;
+    border: 1px solid #3e4498;
+    animation: eye infinite 8s;
+}
+
+.iris {
+    background-color: black;
+    width: 8px;
+    height: 8px;
+    border-radius: 1em;
+}
+
+
+/* NOSE */
+
+.nose-container {
+    background-color: #656abc;
+    height: 3em;
+}
+
+
+/* MOUTH */
+
+.mouth-container {
+    display: flex;
+    justify-content: center;
+    background-color: #656abc;
+    padding-bottom: 2em;
+}
+
+#mouth {
+    width: 70px;
+    height: 36px;
+    border-radius: 44% 56% 48% 52% / 32% 26% 74% 68% ;
+    background-color: black;
+    animation: mouth infinite 8s;
+}
+
+#accessory {
+    position: absolute;
+    width: 80px;
+    height: 8px;
+    margin-top: 1em;
+    margin-left: 7em;
+    background-color: white;
+    animation: accessory infinite 8s;
+}
+
+#accessory:before {
+    position: absolute;
+    content: '';
+    background-color: orange;
+    width: 20px;
+    height: 8px;
+}
+
+#accessory::after {
+    position: absolute;
+    content: '';
+    background-color: red;
+    width: 4px;
+    height: 8px;
+    margin-left: 100%;
+}
+
+/* BAND */
+
+.band {
+    width: 100%;
+    background-color: #656abc;
+    height: 2em;
+    margin: 0;
+    border-top: 12px solid white;
+}
+
+
+
+
+/* ANIMATIONS */
+
+@keyframes mouth {
+    0% {
+        width: 70px;
+        height: 36px;
+        border-radius: 44% 56% 48% 52% / 32% 26% 74% 68% ;
+    }
+    40% {
+        width: 20px;
+        height: 20px;
+        border-radius: 2em;
+    }
+    70% {
+        width: 70px;
+        height: 36px;
+        border-radius: 44% 56% 48% 52% / 32% 26% 74% 68% ;
+    }
+
+    100% {
+        width: 70px;
+        height: 36px;
+        border-radius: 44% 56% 48% 52% / 32% 26% 74% 68% ;
+    }
+}
+
+@keyframes accessory {
+    0% {
+        width: 80px;
+    }
+    40% {
+        width: 20px;
+        margin-left: 2em;
+        margin-top: 6px;
+    }
+
+    70% {
+        width: 20px;
+        margin-left: 5em;
+        margin-top: 1em;
+    }
+
+    100% {
+        width: 20px;
+        margin-left: 5em;
+        margin-top: 1em;
+    }
+}
+
+@keyframes eye {
+    0% {
+        background-color: cornsilk;
+    }
+    1% {
+        background-color: cornsilk;
+    }
+    50% {
+        background-color: rgba(255, 0, 0, 0.7);
+    }
+    100% {
+        background-color: cornsilk;
+    }
+}

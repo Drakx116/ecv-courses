@@ -1,0 +1,24 @@
+html, body {
+    overflow: hidden;
+}
+
+.container {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#canvas {
+    background-image: url("../img/background.jpeg");
+    transition: ease-out 5s;
+}
+
+#canvas:hover {
+    animation: rotate 4s;
+}
+
+@keyframes rotate {
+    /* TODO : ADD BONUS */
+}

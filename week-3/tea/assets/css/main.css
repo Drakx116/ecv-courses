@@ -1,0 +1,444 @@
+/** COLORS **/
+
+:root {
+    --color-white: #FFFFFF;
+    --color-green: #4D834C;
+    --color-grey: #E5E5E5;
+    --color-black: #000000;
+    --color-white-transparent: #FFFFFFCC;
+}
+
+
+/** GLOBAL **/
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/** HEADER **/
+
+header {
+    display: block;
+}
+
+#header-top {
+    display: flex;
+    width: calc(80% - 2em);
+    margin: auto;
+    padding: 1.5em 1em;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-content:last-child {
+    margin-left: auto;
+}
+
+#header-logo {
+    width: 95px;
+}
+
+#header-title {
+    font-family: 'Century Gothic', serif;
+    font-size: 80px;
+    padding: 0 0.25em;
+    text-transform: lowercase;
+}
+
+#header-hamburger {
+    display: none;
+}
+/* NAV */
+
+#header-nav {
+    display: block;
+    padding: 0.5em 0 0 0;
+    background-color: var(--color-green);
+}
+
+#header-nav ul {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+#header-nav li {
+    margin: 0 1em;
+    padding: 2.5em 2em;
+}
+
+#header-nav a:first-of-type {
+    margin-left: 0;
+}
+
+#header-nav a {
+    font-family: "Century Gothic", serif;
+    font-size: 20px;
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: 60px 60px 0 0;
+    margin: 0 1em;
+    padding: 2.5em 2em;
+    transition: ease-out 0.2s;
+}
+
+#header-nav a[aria-current="page"] {
+    font-weight: bold;
+}
+
+#header-nav a:hover {
+    color: var(--color-green);
+    background-color: var(--color-white-transparent);
+}
+
+
+
+/** MAIN **/
+
+main {
+    display: block;
+    width: calc(80% - 2em);
+    margin: 1em auto;
+    padding: 0 1em;
+}
+
+#breadcrumb {
+    margin: 0 2em;
+    font-family: "Century Gothic", serif;
+    font-size: 20px;
+}
+
+.breadcrumb-link {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#article-titre {
+    margin: 0.6em 1em 0;
+    font-family: "Century Gothic", serif;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+
+
+
+/* ARTICLE CONTAINER */
+
+/* COMMON WIH OTHER CONTAINER */
+.sub-title {
+    font-family: "Century Gothic", serif;
+    font-size: 40px;
+    display: block;
+}
+
+.container {
+    width: calc(100% - 4em);
+    margin-top: 2em;
+    padding: 2em;
+    background-color: var(--color-grey);
+}
+
+.sub-container {
+    display: flex;
+    background-color: var(--color-white);
+}
+
+#image-container {
+    width: calc(70% - 2em);
+    padding: 1em;
+}
+
+#description-container {
+    width: calc(30% - 2em);
+    padding: 1em;
+}
+
+#main-image-container {
+    max-width: 100%;
+    position: relative;
+}
+
+#main-image {
+    width: 100%;
+}
+
+#other-images-container {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.other-images {
+    width: calc(100% / 3 - 3px);
+}
+
+
+
+
+/** TOP DESCRIPTION**/
+
+#description-container {
+    display: flex;
+    flex-direction: column;
+    width: calc(30% - 2em);
+    padding: 1em;
+    font-family: "Century Gothic", serif;
+}
+
+#description-container p {
+    margin-top: 1em;
+    font-size: 22px;
+}
+
+#description-container ul {
+    margin:2em 0;
+}
+
+#description-container li {
+    font-size: 22px;
+    margin-top: 0.5em;
+}
+
+#description-container li::before {
+    content: "• ";
+    color: var(--color-green);
+}
+
+
+
+/** BOTTOM DESCRIPTION **/
+
+#bottom-description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.bottom-description-content {
+    text-align: center;
+}
+
+#price {
+    display: block;
+    text-align: center;
+    font-size: 90px;
+    margin-bottom:0.5em;
+    color: var(--color-green
+    );
+}
+
+#order-button {
+    margin-bottom: 2em;
+    padding: 0.5em 1em;
+    font-family: "Century Gothic", serif;
+    font-size: 40px;
+    border: 0;
+    color: var(--color-white);
+    background-color: var(--color-green);
+}
+
+#socials {
+    display: flex;
+    justify-content: end;
+}
+
+
+
+/** PRODUCTS **/
+
+aside #sub-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#product-sub-container {
+    display: block;
+    margin-top: 1em;
+}
+
+#product-sub-container .sub-title {
+    padding: 0.5em;
+}
+
+#products-container {
+    width: 100%;
+    padding-bottom: 2em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-image-container {
+    max-width: 20%;
+    margin: 0 0.5em;
+}
+
+.product-image-container img {
+    max-width: 100%;
+    transition: ease-out 0.3s;
+}
+
+.product-image-container img:hover {
+    box-shadow: 0 -1px 10px -2px var(--color-grey);
+}
+
+.product-image-container p {
+    text-align: center;
+    font-family: "Century Gothic", serif;
+    font-size: 20px;
+}
+
+
+
+/** FOOTER **/
+
+footer {
+    background-color: var(--color-green);
+}
+
+#footer-container {
+    display: flex;
+    width: calc(70% - 4em);
+    margin: auto;
+    padding: 1em 0;
+    justify-content: center;
+}
+
+#footer-container section {
+    padding: 1em 2em;
+    font-family: "Century Gothic", serif;
+}
+
+#footer-container section:last-child {
+    border-left: 1px solid var(--color-white);
+}
+
+.footer-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--color-white);
+}
+
+.footer-links {
+    margin-top: 1em;
+}
+
+.footer-links a {
+    text-decoration: none;
+}
+
+.footer-links li {
+    font-size: 17px;
+    margin-top: 8px;
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+
+
+
+@media only screen and (max-width: 1400px)
+{
+    #price {
+        font-size: 68px;
+    }
+
+    #order-button {
+        font-size: 32px;
+    }
+}
+
+
+
+@media only screen and (max-width: 1200px)
+{
+    /* HEADER */
+
+    #header-top {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-content {
+        padding: 1em;
+    }
+
+    #header-logo {
+        width: 48px;
+    }
+
+    #header-title {
+        font-family: 'Century Gothic', serif;
+        font-size: 44px;
+        padding: 0 0.25em;
+        text-transform: lowercase;
+    }
+
+    #header-hamburger {
+        display: flex;
+        width: 40px;
+    }
+
+    #header-nav ul {
+        display: none;
+    }
+
+
+    /* MAIN  */
+
+    main {
+        width: 100%;
+        margin: 2em 0 0 0;
+        padding: 0 0;
+    }
+
+    #breadcrumb {
+        font-size: 15px;
+        margin-left: 20px;
+    }
+
+    #article-titre {
+        margin-left: 20px;
+        font-family: "Century Gothic", serif;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .container {
+        width: calc(100% - 2em);
+        padding: 1em;
+    }
+
+
+    /* IMAGES */
+
+    .sub-container {
+        width: 100%;
+        display: block;
+    }
+
+    #image-container {
+        width: calc(100% - 2em);
+    }
+
+
+    /* TOP DESCRIPTION */
+
+    #description-container {
+        width: calc(100% - 4em);
+    }
+
+    #bottom-description {
+        flex-direction: row-reverse;
+    }
+}

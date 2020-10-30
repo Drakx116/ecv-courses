@@ -1,0 +1,52 @@
+.container{
+    /* creer une grille de 10 columns sur toute la largeurs, avec columns impaires qui prennent 2 fois plus de free space  */
+    display: grid;
+    grid-template-columns: repeat(5, 2fr 1fr);
+
+    /*creer une grille avec 10 rows de 50px de hauteur*/
+    grid-auto-rows: 50px;
+
+    /*ajouter un espace entre les items de 1em;*/
+    grid-gap: 1em;
+}
+
+
+/* item 1 : commence à col3 et finis à col 5*/
+.container .item:first-child {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+/* item 2 : commence à col 5 et finis à la denière col*/
+.container .item:nth-child(2) {
+    /*grid-column-start: 5;*/
+    /*grid-column-end: -1;*/
+    grid-column: 5 / -1;
+}
+
+/* item 5 : span sur 2 cols et 2 lignes*/
+.container .item:nth-child(5) {
+    grid-area: span 2 / span 2;
+}
+
+/* item 8 : 2 lignes de hauteur*/
+.container .item:nth-child(8) {
+    grid-row: span 2;
+}
+
+/* item 15 : sur toute la largeurs*/
+.container .item:nth-child(15) {
+    grid-column: 1 / -1;
+}
+
+/* item 18 : span 4 et finis à col 9*/
+.container .item:nth-child(18) {
+    grid-row: span 4;
+    grid-column-end: 9;
+}
+
+/* item 20 : commence a ligne 4 et fait 3 de haut*/
+.container .item:nth-child(20) {
+    grid-row-start: 4;
+    grid-row: span 3;
+}

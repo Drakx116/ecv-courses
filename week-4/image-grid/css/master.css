@@ -1,0 +1,36 @@
+*, *::after,*::before{
+  box-sizing : border-box;
+}
+html{
+  background: rgb(0,225,200);
+  font-family: sans-serif;
+}
+body{
+  width : 100%;
+  height : 100%;
+  background: linear-gradient(to right bottom, #292c6b, #224c8a, #1f6da5, #2f8dbb, #4daecf, #48bdcd, #57cac5, #75d6b9, #90cd8c, #b6bf63, #dda94e, #ff8d5b) 100% 100%;
+  padding : 3em;
+  padding-top : 0;
+}
+header{
+  text-align : center;
+  padding : 1em;
+  font-size: 4em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+h2{
+  font-size: 1.1em;
+  font-weight : 800;
+  padding-bottom : 0.5em;
+  text-transform: uppercase;
+}
+.container{
+  font-size: 1.1em;
+}
+.container p{
+  padding : 0.5em 0;
+}
+.rea{
+  font-weight : 600;
+}

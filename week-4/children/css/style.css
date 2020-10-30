@@ -1,0 +1,31 @@
+.container {
+    display: grid;
+    border: 2px solid rebeccapurple;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 200px);
+}
+
+.items {
+    background-color: white;
+}
+
+.items:nth-child(1) {
+    align-self: start;
+    justify-self: left;
+    /* ==> place-self: start left */
+}
+
+.items:nth-child(2) {
+    align-self: start;
+    justify-self: right;
+}
+
+.items:nth-child(3) {
+    align-self: end;
+    justify-self: left;
+}
+
+.items:nth-child(4) {
+    align-self: end;
+    justify-self: right;
+}
