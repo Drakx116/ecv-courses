@@ -186,7 +186,10 @@ body {
     height : 20px; 
     background : white;
     z-index: 1;
-    disply : flex;
+    display : flex;
+    flex-direction : column;
+    top: 40px;
+    padding-top : 20px;
     
 }
 
