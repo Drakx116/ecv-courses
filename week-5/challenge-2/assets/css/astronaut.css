@@ -1,7 +1,15 @@
 /* GLOBAL */
 
 body {
-    background-color: "#181B20";
+    background-color: #181B20;
+}
+
+#space {
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
 }
 
 #astronaut {
@@ -9,7 +17,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
     background-color: #181b20;
 }
 
@@ -18,16 +25,18 @@ body {
 /* HEAD */
 
 #head-container {
-    position : relative;
-    display : flex;
+    position: relative;
+    display: flex;
+    margin-bottom: -7px;
+    z-index: 6;
 }
 
-#head {  
+#head {
     background : white;
     width : 155px;
     height : 120px;
     border-radius : 40%;
-    z-index : 3;
+    z-index : 7;
 }
 
 #head-center {
@@ -47,7 +56,7 @@ body {
     height : 50px;
     border-radius: 40%;
     z-index : 2;
-} 
+}
 #second-color {
     position : absolute;
     background : #3f9db9;
@@ -56,25 +65,26 @@ body {
     border-radius: 24%;
     top : 25px;
     z-index : 3;
-} 
+}
 #third-color {
     position : absolute;
     background : #378ca6;
     width : 100%;
     height : 40px;
-    border-radius: 40%; 
+    border-radius: 40%;
     z-index : 6;
     top : 45px;
-} 
+}
 
  #ear {
     position: absolute;
-    width: 165px;
+    width: 182px;
     height: 20px;
-    top: 270px;
+    top: 52px;
     background: #a5a5a5;
     border-radius: 20px;
-    z-index: 0; 
+    z-index: 1;
+    left: -13px
  }
 
  #head-container:after {
@@ -82,14 +92,27 @@ body {
      width : 100px;
      height : 52px;
      background :  #181b20;
-     border : 10px solid #d1d3d2; 
+     border : 10px solid #d1d3d2;
      border-radius : 30%;
      content : "";
-     z-index : 2;
+     z-index : 0;
      right: -40px;
     bottom: -7px;
  }
 
+
+ /*cou*/
+
+ #cou {
+    height: 22px;
+    width: 90px;
+    z-index: 5;
+    top: 111px;
+    background: #a5a5a5;
+    border-radius: 100%;
+    position: absolute;
+    left: 33px;
+ }
 
 
 /* ARMS*/
@@ -136,6 +159,52 @@ body {
     border: 5px solid #181b20;
 }
 
+#body-center {
+    position: absolute;
+    height: 100px;
+    top: 29px;
+    left: 30px;
+    width: 83px;
+    background: #d1d3d2;
+    display : flex;
+    justify-content : space-around;
+}
+
+#rectangle-container {
+    display: flex;
+    position: absolute;
+    width: 83px;
+    top: 30px;
+    height: 100px;
+    flex-direction: row;
+    background: #a5a5a5;
+}
+
+#rectangle {
+    position : absolute;
+    width : 50px;
+    height : 20px; 
+    background : white;
+    z-index: 1;
+    disply : flex;
+    
+}
+
+#carre {
+    position : absolute;
+    width : 50px;
+    height : 20px; 
+    background : white;
+    z-index: 1;
+}
+
+.rond {
+    margin-top : 10px;
+    background : white;
+    border-radius : 50%;
+    width : 10px;
+    height : 10px;
+}
 
 
 /* LEGS */
@@ -144,7 +213,7 @@ body {
     position: absolute;
     display: flex;
     justify-content: space-around;
-    width: 90px;
+    width: 130px;
     height: 200px;
     margin-top: 560px;
     z-index: 2;
@@ -152,14 +221,51 @@ body {
 
 .leg {
     background-color: white;
-    width: 40px;
+    width: 50px;
     height: 150px;
     border-radius: 10px;
     border: 5px solid #181b20;
 }
 
-.leg:nth-child(1) {
-    border-right: 2px;
+.leg:after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    width: 60px;
+    height: 40px;
+    margin-top: 115px;;
+    background-color: white;
+    border-radius: 2em 2em 0 0;
+    border: 4px solid #181B20;
+}
+
+.leg:nth-child(1)::after {
+    margin-left: -10px;
 }
 
 
+.leg:nth-child(2)::after {
+    margin-left: -8px;
+}
+
+
+
+/* BONUS */
+
+#astronaut {
+    animation: shake 9s infinite linear;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-3deg); }
+    20% { transform: translate(-3px, 0px) rotate(3deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(3deg); }
+    50% { transform: translate(-1px, 2px) rotate(-3deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-3deg); }
+    80% { transform: translate(-1px, -1px) rotate(3deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-3deg); }
+}
