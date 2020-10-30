@@ -1,0 +1,76 @@
+body {
+    background-color: "#181B20";
+}
+
+#astronaut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #181b20;
+}
+
+
+
+
+/* ARMS*/
+
+#arms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 150px;
+    border-radius: 2em;
+    background-color: white;
+}
+
+#arms-bar-container {
+    margin-top: 20px;
+}
+
+.arms-bar {
+    width: 200px;
+    border: 8px solid #18abc8;
+    margin: 16px;
+    border-radius: 2em;
+}
+
+.arms-bar:nth-child(2) {
+    border-color: #1a8ca9;
+}
+
+
+
+/* HEAD */
+
+#head {  
+    position : relative;
+    width : 155px;
+    height : 120px;
+    border-radius : 40%;
+    background : white;
+    z-index : 1;
+}
+
+#head-center {
+    position : absolute;
+    width : 125px;
+    height : 100px;
+    background : #378ca6;
+    border-radius : 40%;
+    top: 10px;
+    left: 15px;
+    z-index: 2;
+}
+
+ #ear {
+    position: absolute;
+    width: 175px;
+    height: 20px;
+    top: 46px;
+    left: -9px;
+    background: #a5a5a5;
+    border-radius: 20px;
+ }
