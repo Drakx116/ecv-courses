@@ -1,0 +1,11 @@
+#container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#game {
+    border: 1px solid black;
+    margin: auto;
+}
