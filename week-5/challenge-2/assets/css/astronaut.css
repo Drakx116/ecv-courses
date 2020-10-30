@@ -80,14 +80,14 @@ body {
  #head-container:after {
      position : absolute;
      width : 100px;
-     height : 100px;
-     background : black;
-     border : 10px solid gray; 
+     height : 52px;
+     background :  #181b20;
+     border : 10px solid #d1d3d2; 
      border-radius : 30%;
      content : "";
-     z-index : 6;
-     right: -100px;
-    bottom: -46px;
+     z-index : 2;
+     right: -40px;
+    bottom: -7px;
  }
 
 
