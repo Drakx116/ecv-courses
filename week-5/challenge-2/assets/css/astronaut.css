@@ -1,3 +1,5 @@
+/* GLOBAL */
+
 body {
     background-color: "#181B20";
 }
@@ -13,6 +15,82 @@ body {
 
 
 
+/* HEAD */
+
+#head-container {
+    position : relative;
+    display : flex;
+}
+
+#head {  
+    background : white;
+    width : 155px;
+    height : 120px;
+    border-radius : 40%;
+    z-index : 3;
+}
+
+#head-center {
+    position : absolute;
+    width : 125px;
+    height : 100px;
+    border-radius : 40%;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+}
+
+#first-color {
+    position : absolute;
+    background : #47AEC9;
+    width : 100%;
+    height : 50px;
+    border-radius: 40%;
+    z-index : 2;
+} 
+#second-color {
+    position : absolute;
+    background : #3f9db9;
+    width : 100%;
+    height : 50px;
+    border-radius: 24%;
+    top : 25px;
+    z-index : 3;
+} 
+#third-color {
+    position : absolute;
+    background : #378ca6;
+    width : 100%;
+    height : 40px;
+    border-radius: 40%; 
+    z-index : 6;
+    top : 45px;
+} 
+
+ #ear {
+    position: absolute;
+    width: 165px;
+    height: 20px;
+    top: 270px;
+    background: #a5a5a5;
+    border-radius: 20px;
+    z-index: 0; 
+ }
+
+ #head-container:after {
+     position : absolute;
+     width : 100px;
+     height : 100px;
+     background : black;
+     border : 10px solid gray; 
+     border-radius : 30%;
+     content : "";
+     z-index : 6;
+     right: -100px;
+    bottom: -46px;
+ }
+
+
 
 /* ARMS*/
 
@@ -24,6 +102,8 @@ body {
     height: 150px;
     border-radius: 2em;
     background-color: white;
+    margin-top: 22px;
+    z-index: 2;
 }
 
 #arms-bar-container {
@@ -43,34 +123,43 @@ body {
 
 
 
-/* HEAD */
+/* BODY */
 
-#head {  
-    position : relative;
-    width : 155px;
-    height : 120px;
-    border-radius : 40%;
-    background : white;
-    z-index : 1;
+#body {
+    position: absolute;
+    margin-top: 160px;
+    height: 200px;
+    width: 140px;
+    border-radius: 2em;
+    background-color: white;
+    z-index: 2;
+    border: 5px solid #181b20;
 }
 
-#head-center {
-    position : absolute;
-    width : 125px;
-    height : 100px;
-    background : #378ca6;
-    border-radius : 40%;
-    top: 10px;
-    left: 15px;
+
+
+/* LEGS */
+
+.legs {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    width: 90px;
+    height: 200px;
+    margin-top: 560px;
     z-index: 2;
 }
 
- #ear {
-    position: absolute;
-    width: 175px;
-    height: 20px;
-    top: 46px;
-    left: -9px;
-    background: #a5a5a5;
-    border-radius: 20px;
- }
+.leg {
+    background-color: white;
+    width: 40px;
+    height: 150px;
+    border-radius: 10px;
+    border: 5px solid #181b20;
+}
+
+.leg:nth-child(1) {
+    border-right: 2px;
+}
+
+
