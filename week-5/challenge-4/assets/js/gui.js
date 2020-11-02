@@ -28,11 +28,8 @@ class GUI {
       const y = event.clientY;
 
       dots.map((dot, key) => {
-        const dotX = dot.pos.x;
-        const dotY = dot.pos.y;
-
         // Checks if the pointer is in the dot
-        const exists = Math.sqrt((dotX - x)**2 + (dotY - y)**2) < RADIUS;
+        const exists = Math.sqrt((dot.pos.x - x)**2 + (dot.pos.y - y)**2) < dot.radius;
         if (exists) {
           dots.splice(key, 1);
         }
