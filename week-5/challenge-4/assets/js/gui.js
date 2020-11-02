@@ -21,4 +21,24 @@ class GUI {
     this.clear();
     this.drawDots(dots);
   }
+
+  handleClick = dots => {
+    document.addEventListener('click', event => {
+      const x = event.clientX;
+      const y = event.clientY;
+
+      dots.map((dot, key) => {
+        const dotX = dot.pos.x;
+        const dotY = dot.pos.y;
+
+        // Checks if the pointer is in the dot
+        const exists = Math.sqrt((dotX - x)**2 + (dotY - y)**2) < RADIUS;
+        if (exists) {
+          dots.splice(key, 1);
+        }
+
+        this.redraw(dots)
+      });
+    });
+  };
 }

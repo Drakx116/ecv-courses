@@ -18,5 +18,7 @@ const animation = (dots) => {
   gui.redraw(dots);
 }
 
+gui.handleClick(dots);
+
 animation(dots);
 setInterval(() => { animation(dots); }, 1000);
