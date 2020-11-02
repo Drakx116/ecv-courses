@@ -22,6 +22,10 @@ class GUI {
     this.drawDots(dots);
   }
 
+  updateScore = () => {
+    let score = document.getElementById('score');
+  };
+
   handleClick = dots => {
     document.addEventListener('click', event => {
       const x = event.clientX;
@@ -32,6 +36,7 @@ class GUI {
         const exists = Math.sqrt((dot.pos.x - x)**2 + (dot.pos.y - y)**2) < dot.radius;
         if (exists) {
           dots.splice(key, 1);
+          this.updateScore();
         }
 
         this.redraw(dots)
