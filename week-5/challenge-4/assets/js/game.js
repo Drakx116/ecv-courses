@@ -4,12 +4,12 @@ const gui = new GUI(canvas);
 let dots = [];
 
 const generateNewDot = () => {
-    const dot = new Dot();
+  const dot = new Dot();
 
-    dot.pos.x = Math.floor(Math.random() * (WIDTH - RADIUS - RADIUS) + RADIUS);
-    dot.pos.y = Math.floor(Math.random() * (HEIGHT - RADIUS - RADIUS) + RADIUS);
+  dot.pos.x = Math.floor(Math.random() * (WIDTH - RADIUS - RADIUS) + RADIUS);
+  dot.pos.y = Math.floor(Math.random() * (HEIGHT - RADIUS - RADIUS) + RADIUS);
 
-    return dot;
+  return dot;
 };
 
 const animation = (dots) => {
@@ -18,5 +18,5 @@ const animation = (dots) => {
   gui.redraw(dots);
 }
 
-
 animation(dots);
+setInterval(() => { animation(dots); }, 1000);
