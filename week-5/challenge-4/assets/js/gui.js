@@ -16,4 +16,9 @@ class GUI {
       this.canvas.save();
     });
   }
+
+  redraw = (dots) => {
+    this.clear();
+    this.drawDots(dots);
+  }
 }
