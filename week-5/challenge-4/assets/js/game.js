@@ -1,19 +1,11 @@
 const canvas = document.getElementById('game').getContext('2d');
 const gui = new GUI(canvas);
+const seeder = new Seeder();
 
 let dots = [];
 
-const generateNewDot = () => {
-  const dot = new Dot();
-
-  dot.pos.x = Math.floor(Math.random() * (WIDTH - RADIUS - RADIUS) + RADIUS);
-  dot.pos.y = Math.floor(Math.random() * (HEIGHT - RADIUS - RADIUS) + RADIUS);
-
-  return dot;
-};
-
 const animation = (dots) => {
-  dots.push(generateNewDot());
+  dots.push(seeder.generateNewDot());
 
   gui.redraw(dots);
 }
