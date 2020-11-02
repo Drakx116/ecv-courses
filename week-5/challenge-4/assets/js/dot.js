@@ -1,10 +1,7 @@
 class Dot {
     constructor() {
-        this.pos = {
-            x: 0,
-            y: 0
-        }
-        this.color = "#DDDDDD";
+        this.pos = { x: 0, y: 0 }
+        this.color = COLOR.DEFAULT;
         this.radius = RADIUS;
     }
 }
