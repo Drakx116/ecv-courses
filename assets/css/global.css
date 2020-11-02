@@ -1,0 +1,57 @@
+.main-title {
+    font-family: "Rubik", sans-serif;
+    font-size: 62px;
+    letter-spacing: 1px;
+    font-weight: 900;
+}
+
+.main-sub-title {
+    font-family: "Rubik", sans-serif;
+    font-size: 32px;
+    font-weight: normal;
+}
+
+.main-week-title {
+    font-family: "Rubik", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.main-list {
+    font-size: 18px;
+}
+
+.main-element {
+    margin-top: 8px;
+    font-family: "Karla", sans-serif;
+    font-size: 22px;
+    list-style-type: upper-roman;
+}
+
+.main-link {
+    text-decoration: underline;
+    color: black;
+    cursor: pointer;
+}
+
+.main-return-link {
+    display: block;
+    margin-top: 2em;
+}
+
+.main-return-button {
+    border: 1px solid rebeccapurple;
+    padding: 1em;
+    font-family: "Rubik", sans-serif;
+    font-size: 18px;
+    border-radius: 6px;
+    background-color: rebeccapurple;
+    color: white;
+    transition: 0.3s ease-out;
+}
+
+.main-return-button:hover {
+    cursor: pointer;
+    color: rebeccapurple;
+    background-color: white;
+}
