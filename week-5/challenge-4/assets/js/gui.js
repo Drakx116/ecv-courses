@@ -22,8 +22,9 @@ class GUI {
     this.drawDots(dots);
   }
 
-  updateScore = () => {
-    let score = document.getElementById('score');
+  updateScore = (dot) => {
+    let scoreHTML = document.getElementById('score').innerText;
+    document.getElementById('score').innerText = parseInt(scoreHTML) + dot.points;
   };
 
   handleClick = dots => {
@@ -36,7 +37,7 @@ class GUI {
         const exists = Math.sqrt((dot.pos.x - x)**2 + (dot.pos.y - y)**2) < dot.radius;
         if (exists) {
           dots.splice(key, 1);
-          this.updateScore();
+          this.updateScore(dot);
         }
 
         this.redraw(dots)
