@@ -6,22 +6,41 @@ class Seeder {
   };
 
   generateRandomDot(random) {
-    const dot = new Dot();
-
-    let radius = 14;
-    let color = COLOR.DEFAULT;
+    let type = TYPE.DEFAULT;
 
     switch (random) {
       case 7:
-        radius = 12;
+        type = TYPE.DOUBLE;
+        break;
+      case 8:
+        type = COLOR.BONUS;
+        break;
+      case 9:
+        type = TYPE.MALUS;
+        break;
+    }
+
+    return this.initializeDotByType(type);
+  }
+
+  initializeDotByType(type) {
+    const dot = new Dot();
+
+    // Default values
+    let radius = RADIUS.DEFAULT;
+    let color = COLOR.DEFAULT;
+
+    switch (type) {
+      case TYPE.DOUBLE:
+        radius = RADIUS.DOUBLE;
         color = COLOR.DOUBLE;
         break;
       case 8:
-        radius = 10;
+        radius = RADIUS.DOUBLE;
         color = COLOR.BONUS;
         break;
       case 9:
-        radius = 14;
+        radius = RADIUS.MALUS;
         color = COLOR.MALUS;
         break;
     }
