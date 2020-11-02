@@ -4,5 +4,6 @@ class Dot {
         this.color = COLOR.DEFAULT;
         this.radius = RADIUS.DEFAULT;
         this.type = TYPE.DEFAULT;
+        this.points = POINTS.DEFAULT;
     }
 }
