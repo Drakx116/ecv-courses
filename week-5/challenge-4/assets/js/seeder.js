@@ -13,7 +13,7 @@ class Seeder {
         type = TYPE.DOUBLE;
         break;
       case 8:
-        type = COLOR.BONUS;
+        type = TYPE.BONUS;
         break;
       case 9:
         type = TYPE.MALUS;
@@ -27,26 +27,31 @@ class Seeder {
     const dot = new Dot();
 
     // Default values
-    let radius = RADIUS.DEFAULT;
     let color = COLOR.DEFAULT;
+    let points = POINTS.DEFAULT;
+    let radius = RADIUS.DEFAULT;
 
     switch (type) {
       case TYPE.DOUBLE:
-        radius = RADIUS.DOUBLE;
         color = COLOR.DOUBLE;
-        break;
-      case 8:
+        points = POINTS.DOUBLE;
         radius = RADIUS.DOUBLE;
-        color = COLOR.BONUS;
         break;
-      case 9:
-        radius = RADIUS.MALUS;
+      case TYPE.BONUS:
+        color = COLOR.BONUS;
+        points = POINTS.BONUS;
+        radius = RADIUS.BONUS;
+        break;
+      case TYPE.MALUS:
         color = COLOR.MALUS;
+        points = POINTS.MALUS;
+        radius = RADIUS.MALUS;
         break;
     }
 
-    dot.radius = radius;
     dot.color = color;
+    dot.points = points;
+    dot.radius = radius;
     dot.pos.x = Math.floor(Math.random() * (WIDTH - 2*radius) + radius);
     dot.pos.y = Math.floor(Math.random() * (HEIGHT - 2*radius) + radius);
 
