@@ -13,3 +13,10 @@ const COLOR = {
   'BONUS': '#0CCA4A',
   'MALUS': '#D7263D',
 };
+
+const POINTS = {
+  'DEFAULT': 1,
+  'DOUBLE': 2,
+  'BONUS': 2,
+  'MALUS': -5
+}
