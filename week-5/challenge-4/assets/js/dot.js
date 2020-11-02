@@ -5,6 +5,6 @@ class Dot {
             y: 0
         }
         this.color = "#DDDDDD";
-        this.radius = 15;
+        this.radius = RADIUS;
     }
 }
