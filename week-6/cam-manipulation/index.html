@@ -14,34 +14,35 @@
 </head>
 
 <body>
-  <!-- <img id="my-img" src='img.jpg' alt=""/> -->
+   <img id="my-img" src='img.jpg' alt=""/>
   <div id="config">
     <fieldset>
       <legend>
-        filter
+        Filter
       </legend>
       <p>
         <input type="radio" name="filter" id="none" checked />
-        <label for='none'>none</label>
+        <label for='none'> Default </label>
       </p>
       <p>
         <input type="radio" name="filter" id="red" />
-        <label for='red'>red</label>
+        <label for='red'> Red </label>
       </p>
       <p>
         <input type="radio" name="filter" id="green" />
-        <label for='green'>green</label>
+        <label for='green'> Green </label>
       </p>
       <p>
         <input type="radio" name="filter" id="blue" />
-        <label for='blue'>blue</label>
+        <label for='blue'> Blue </label>
       </p>
       <p>
         <input type="radio" name="filter" id="rgb" />
-        <label for='rgb'>crazy RGB</label>
+        <label for='rgb'> Crazy </label>
       </p>
     </fieldset>
-    <fieldset>
+
+    <fieldset style="display: none">
       <legend>
         green screen
       </legend>
@@ -66,7 +67,8 @@
         <input type="range" name="range" id="distance-blue" min="0" max="255" value="50" />
       </p>
     </fieldset>
-    <p>
+
+    <p style="display:none;">
       <input type="checkbox" id="ml" />
       <label for="ml">Surprise</label>
     </p>

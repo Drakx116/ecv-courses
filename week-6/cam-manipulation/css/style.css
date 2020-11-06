@@ -45,7 +45,7 @@ body{
   margin-right : 1em;
 }
 legend{
-  font-size : 600;
+  font-size : 24px;
 }
 
 canvas{
@@ -57,4 +57,8 @@ canvas{
   display: grid;
   align-items: center;
   justify-items : center;
+}
+
+#my-img {
+  opacity: 0;
 }
