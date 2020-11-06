@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Exercise 1 </title>
+</head>
+<body>
+
+<script>
+    let number = 0;
+    let errors = 1;
+
+    while (errors) {
+      errors = 0;
+
+      number = window.prompt('Veuillez saisir un chiffre compris entre 1 et 3 inclus :');
+
+      if (!number.match(new RegExp("[0-9]"))) {
+        alert('Format incorrect. Veuillez rentrer un chiffre.');
+        errors++;
+      }
+
+      if (number < 1) {
+        alert('Trop petit. Le chiffre ne peut pas être plus petit que 1.');
+        errors++;
+      }
+
+      if (number > 3) {
+        alert('Trop grand. Le chiffre ne peut pas être plus grand que 3.');
+        errors++;
+      }
+    }
+
+    alert('Chiffre valide : ' + number);
+</script>
+</body>
+</html>
