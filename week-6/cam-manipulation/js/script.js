@@ -1,6 +1,12 @@
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
+
 const image = document.getElementById('my-img');
+const width = image.width;
+const height = image.height;
+
+const video = document.getElementById("camera");
+const allowedWebcam = document.getElementById('allow-webcam');
 
 const TYPES = {
   DEFAULT: 'DEFAULT',
@@ -11,6 +17,39 @@ const TYPES = {
   },
   DOUBLE: {
     HOT_AND_COLD: 'HOT_AND_COLD'
+  },
+  SPECIAL: {
+    WEBCAM: 'WEBCAM'
+  }
+}
+
+const switchBetweenImageAndStream = () => {
+  if (allowedWebcam.checked) {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    canvas.width = 400;
+    canvas.height = 200;
+
+    navigator.mediaDevices.getUserMedia({
+      video: true,
+      audio: false
+    })
+    .then(stream =>  {
+      video.srcObject = stream;
+      video.play();
+    })
+    .catch(error => {
+      console.error('Cannot access webcam', error);
+    });
+
+    const timer = setInterval(() => {
+      context.drawImage(video, 0, 0, 400, 200);
+    }, 1000 / 144);
+  }
+  else {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    canvas.width = image.width;
+    canvas.height = image.height;
+    context.drawImage(image, 0, 0, width, height);
   }
 }
 
@@ -43,7 +82,22 @@ const draw = type => {
   canvas.width = width;
   canvas.height = height;
 
-  context.drawImage(image, 0, 0, width, height);
+  // navigator.mediaDevices.getUserMedia({
+  //   video: true,
+  //   audio: false
+  // })
+  // .then(stream =>  {
+  //   video.srcObject = stream;
+  //   video.play();
+  // })
+  // .catch(error => {
+  //   console.error('Cannot access webcam', error);
+  // });
+
+  // const timer = setInterval(() => {
+    context.drawImage(image, 0, 0, width, height);
+    // context.drawImage(video, 0, 0, 400, 200);
+  // }, 1000 / 144);
 
   let pixels = context.getImageData(0, 0, width, height);
 
@@ -58,6 +112,7 @@ const getFilterType = id => {
     case 'green': return TYPES.FULL.GREEN;
     case 'blue': return TYPES.FULL.BLUE;
     case 'hot-and-cold': return TYPES.DOUBLE.HOT_AND_COLD;
+    case 'video': return TYPES.SPECIAL.WEBCAM;
 
     default: return TYPES.DEFAULT;
   }
@@ -67,12 +122,13 @@ const filters = document.querySelectorAll("input[name=filter]");
 filters.forEach(filter => {
   filter.addEventListener('change', () => {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    console.log(filter.getAttribute('id'));
     const type = getFilterType(filter.id);
-
     draw(type);
   });
-})
+});
 
+allowedWebcam.addEventListener('change', () => {
+  switchBetweenImageAndStream();
+});
 
 draw(TYPES.DEFAULT);

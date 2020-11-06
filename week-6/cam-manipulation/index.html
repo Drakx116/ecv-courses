@@ -40,6 +40,11 @@
         <input type="radio" name="filter" id="hot-and-cold" />
         <label for='hot-and-cold'> Hot & Cold </label>
       </p>
+      <p>
+        <label> Use your face instead (needs the webcam)
+          <input type="checkbox" id="allow-webcam">
+        </label>
+      </p>
     </fieldset>
 
     <fieldset style="display: none">
@@ -76,12 +81,17 @@
   <video id="player"></video>
   <div id="canvas-container">
     <canvas id="canvas"></canvas>
+    <div>
+      <video id="camera" width="0" height="0" autoplay></video>
+    </div>
   </div>
 
   <ul id="photos-container">
   </ul>
+
   <audio id="snap" src="camera.mp3"></audio>
   <script src="js/script.js" charset="utf-8"></script>
 </body>
 
 </html>
+
