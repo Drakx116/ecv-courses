@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Exercise 2 </title>
+</head>
+<body>
+
+<script>
+let number = 0;
+let errors = 1;
+
+while (errors) {
+    errors = 0;
+
+    number = window.prompt('Veuillez saisir un chiffre compris entre 10 et 20 inclus :');
+
+    if (!number.match(new RegExp("[0-9]"))) {
+      alert('Format incorrect. Veuillez rentrer un chiffre.');
+      errors++;
+    }
+
+    if (number < 10) {
+      alert('Trop petit. Le chiffre ne peut pas être plus petit que 10.');
+      errors++;
+    }
+
+    if (number > 20) {
+      alert('Trop grand. Le chiffre ne peut pas être plus grand que 20.');
+      errors++;
+    }
+}
+
+alert('Chiffre valide : ' + number);
+</script>
+</body>
+</html>
