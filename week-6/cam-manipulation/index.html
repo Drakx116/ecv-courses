@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Demo</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Load TensorFlow.js -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script> -->
+  <!-- Load Posenet -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script> -->
+</head>
+
+<body>
+  <!-- <img id="my-img" src='img.jpg' alt=""/> -->
+  <div id="config">
+    <fieldset>
+      <legend>
+        filter
+      </legend>
+      <p>
+        <input type="radio" name="filter" id="none" checked />
+        <label for='none'>none</label>
+      </p>
+      <p>
+        <input type="radio" name="filter" id="red" />
+        <label for='red'>red</label>
+      </p>
+      <p>
+        <input type="radio" name="filter" id="green" />
+        <label for='green'>green</label>
+      </p>
+      <p>
+        <input type="radio" name="filter" id="blue" />
+        <label for='blue'>blue</label>
+      </p>
+      <p>
+        <input type="radio" name="filter" id="rgb" />
+        <label for='rgb'>crazy RGB</label>
+      </p>
+    </fieldset>
+    <fieldset>
+      <legend>
+        green screen
+      </legend>
+      <p>
+        <input type="checkbox" id="green-screen" />
+        <label for='green-screen'>green screen</label>
+      </p>
+      <p>
+        <label for='color'>color</label>
+        <input type="color" name="color" id="color" value="#D4D709" />
+      </p>
+      <p>
+        <label for='range'>distance red</label>
+        <input type="range" name="range" id="distance-red" min="0" max="255" value="50" />
+      </p>
+      <p>
+        <label for='range'>distance green</label>
+        <input type="range" name="range" id="distance-green" min="0" max="255" value="50" />
+      </p>
+      <p>
+        <label for='range'>distance blue</label>
+        <input type="range" name="range" id="distance-blue" min="0" max="255" value="50" />
+      </p>
+    </fieldset>
+    <p>
+      <input type="checkbox" id="ml" />
+      <label for="ml">Surprise</label>
+    </p>
+  </div>
+  <video id="player"></video>
+  <div id="canvas-container">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <ul id="photos-container">
+  </ul>
+  <audio id="snap" src="camera.mp3"></audio>
+  <script src="js/script.js" charset="utf-8"></script>
+</body>
+
+</html>

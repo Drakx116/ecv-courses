@@ -1,0 +1,60 @@
+
+
+*, *::after,*::before{
+  box-sizing : border-box;
+}
+
+html{
+  width : 100vw;
+  height : 100vh;
+  font-family: sans-serif;
+}
+
+canvas{
+  max-height : 100%;
+}
+video{
+  grid-area: feed;
+  max-width : 100%;
+}
+
+body{
+  display : grid;
+  grid-template-columns: 1fr 200px;
+  grid-template-rows: 150px 1fr;
+  grid-template-areas:
+  "config feed"
+  "cam pix";
+  grid-gap : 1em;
+}
+
+#photos-container{
+  grid-area : pix;
+}
+#photos-container img{
+  max-width : 100%;
+}
+#photo-container li{
+  padding : 1em;
+}
+#config{
+  grid-area : config;
+  display: flex;
+}
+#config>*{
+  margin-right : 1em;
+}
+legend{
+  font-size : 600;
+}
+
+canvas{
+  background : url("../bg.jpg");
+}
+#canvas-container{
+  grid-area : cam;
+  max-width : 100%;
+  display: grid;
+  align-items: center;
+  justify-items : center;
+}
