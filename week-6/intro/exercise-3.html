@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Exercise 3 </title>
+</head>
+<body>
+
+<script>
+
+  // Functions
+
+  const getNumberPopulatedArray = size => {
+        let tab = [];
+        for (let i = 0; i < size; i++) {
+            tab.push(getNewPromptUserNumber(size - i));
+        }
+
+        return tab;
+    }
+
+  const getNewPromptUserNumber= left => {
+        let number = undefined;
+        let error = 1;
+
+        while (error) {
+          error = 0;
+
+          number = window.prompt('Veuillez saisir un nombre (encore ' + left + ').');
+
+          if (!number.match(new RegExp("[0-9]"))) {
+            alert('Format incorrect. Veuillez rentrer un nombre.');
+            error++;
+          }
+        }
+
+        return parseInt(number);
+    }
+
+  const getArrayMaxValue = array => {
+    const max = {'key': 0, 'value': 0 };
+
+    array.forEach((number, key) => {
+      if (number > max.value) {
+        max.key = key;
+        max.value = number;
+      }
+    });
+
+    return max;
+  }
+
+  const displayResult = max => {
+    alert('La valeur maximale du tableau est ' + max.value + ' et se trouve à la position ' + (max.key + 1) + '.');
+  }
+
+
+
+  // Logic
+
+  const numbers = getNumberPopulatedArray(20);
+  const max = getArrayMaxValue(numbers);
+
+  displayResult(max);
+
+</script>
+</body>
+</html>
