@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Exercice 1 </title>
+</head>
+<body>
+
+<script>
+
+    const getWithoutTaxPrice = () => {
+      let price = 0;
+      let error = 1;
+
+      while (error) {
+        error = 0;
+
+        price = window.prompt('Veuillez saisir le prix HT.');
+
+        if (!price.match(new RegExp("[0-9]"))) {
+          alert('Format incorrect. Veuillez rentrer un nombre.');
+          error++; continue;
+        }
+
+        if (price < 0) {
+          alert('Nombre trop petit. La prix ne peut pas être nul ou négatif.'); error++;
+        }
+      }
+
+      return price;
+    };
+
+    const getArticleAmount = () => {
+      let amount = 0;
+      let error = 1;
+
+      while (error) {
+        error = 0;
+
+        amount = window.prompt('Veuillez saisir le nombre d\'articles (au moins 1).');
+
+        if (!amount.match(new RegExp("[0-9]"))) {
+          alert('Format incorrect. Veuillez rentrer un nombre entier (au moins 1).');
+          error++; continue;
+        }
+
+        if (!amount) {
+          alert('Le nombre d\'article en peut pas être inférieur à 1.'); error++;
+        }
+      }
+
+      return Math.floor(amount);
+    };
+
+    const getTaxeRate = () => {
+      let tax = 0;
+      let error = 1;
+
+      while (error) {
+        error = 0;
+
+        tax = window.prompt('Veuillez saisir la taxe à appliquer (en pourcentage - ex: 20).');
+
+        if (!tax.match(new RegExp("[0-9]"))) {
+          alert('Format incorrect. Veuillez rentrer un nombre.');
+          error++; continue;
+        }
+
+        if (tax < 0) {
+          alert('Nombre trop petit. La prix ne peut pas être nul ou négatif.'); error++;
+        }
+      }
+
+      return tax;
+    };
+
+    const calculateTaxPrice = (price, amount, tax) => {
+      return price * amount * ((100 + parseInt(tax)) / 100);
+    };
+
+    const price = getWithoutTaxPrice();
+    const amount = getArticleAmount();
+    const tax = getTaxeRate();
+
+    const total = calculateTaxPrice(price, amount, tax);
+
+    alert('Le prix total pour ' + amount + ' articles pour un prix de base de ' + price + '€ avec une taxe de ' + tax + '% est de ' + total + '€.');
+
+</script>
+
+</body>
+</html>
