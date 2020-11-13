@@ -39,6 +39,12 @@
   const getNumberPopulatedArray = size => {
         let tab = [];
         for (let i = 0; i < size; i++) {
+            const newNumber = getNewPromptUserNumber(size - 1);
+
+            if (!newNumber) { // Stop filling the array if the user prompt equals 0
+              return tab;
+            }
+
             tab.push(getNewPromptUserNumber(size - i));
         }
 
