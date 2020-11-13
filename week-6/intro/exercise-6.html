@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Exercise 6 </title>
+</head>
+<body>
+
+<script>
+
+    const getDiceRollOccurrences = () => {
+      let max = 0;
+      let error = 1;
+
+      while (error) {
+        error = 0;
+
+        max = window.prompt('Veuillez saisir le nombre de lancés de dés à effectuer (au moins 2).');
+
+        if (!max.match(new RegExp("[0-9]"))) {
+          alert('Format incorrect. Veuillez rentrer un nombre entier (au moins 2).');
+          error++; continue;
+        }
+
+        if (max < 2) {
+          alert('Nombre trop petit. La nombre de lancés de dé ne peut pas être inférieur à 2.'); error++;
+        }
+      }
+
+      return max;
+    };
+
+    const getDiceRollValue = () => {
+      return Math.floor(Math.random() * 6 ) + 1;
+    };
+
+    const getDiceRollStats = occurrences => {
+
+      const stats = [ 0, 0, 0, 0, 0, 0 ];
+
+      for (let i = 0; i < occurrences; i++) {
+        const choice = confirm('Lancé n°' + (i+1) + '. Souhaitez-vous lancer le dé  ?');
+        if (!choice) {
+          alert('Jeu terminé (le joueur a lâchement abandonné son dé ...).');
+          return false;
+        }
+
+        const result = getDiceRollValue();
+        alert('Résultat du lancé n°' + (i+1) + ' : ' + result);
+
+        stats[result-1]++;
+      }
+
+      return stats;
+    };
+
+    const occurrences = getDiceRollOccurrences();
+    const stats = getDiceRollStats(occurrences);
+
+    if (stats) {
+      let response = '';
+
+      stats.map((value, key) => {
+        response += 'La face ' + (key + 1) + ' est apparue ' + value + ' fois. \r\n';
+      });
+
+      alert(response);
+    }
+
+</script>
+
+</body>
+</html>
