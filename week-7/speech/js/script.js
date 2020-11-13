@@ -6,21 +6,27 @@ const recognition = new window.SpeechRecognition();
 recognition.interimResults = true;
 
 // Global
-const words = document.getElementById('words');
+const chat = document.getElementById('chat');
 
 /// EVENTS
 
 recognition.addEventListener('result', event => {
-  let sentence = document.createElement('li');
-
-  sentence.textContent = Array.from(event.results)
+  const prompt = Array.from(event.results)
     .map(result => result[0])
     .map(result => result.transcript)
     .join('');
 
   // End of the sentence
   if (event.results[0].isFinal) {
-    words.appendChild(sentence);
+    const sentence = document.createElement('div');
+    const text = document.createElement('p');
+
+    text.textContent = prompt;
+
+    sentence.setAttribute('class', 'sentence');
+    sentence.appendChild(text);
+
+    document.getElementById('chat').appendChild(sentence);
   }
 });
 
