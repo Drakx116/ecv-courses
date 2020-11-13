@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Exercise 3 </title>
+</head>
+<body>
+
+<script>
+
+  const getClassSize = () => {
+    let size = 0;
+    let error = 1;
+
+    while (error) {
+      error = 0;
+
+      size = window.prompt('Veuillez saisir le nombre d\'élèves présents dans la classe (au moins 1).');
+
+      if (!size.match(new RegExp("[0-9]"))) {
+        alert('Format incorrect. Veuillez rentrer un nombre entier (au moins 1).');
+        error++; continue;
+      }
+
+      if (size < 1) {
+        alert('Nombre trop petit. La classe ne peut pas être vide !'); error++;
+      }
+    }
+
+    return size;
+  };
+
+  const getStudentName = position => {
+    let name = '';
+    let error = 1;
+
+    while (error) {
+      error = 0;
+
+      name = window.prompt('Veuillez saisir le nom de l\'élève n° ' + (parseInt(position) + 1) + '.');
+
+      if (name.length < 2) {
+        alert('Nom trop court ! Le longueur du nom ne peut pas être inférieure à 2.'); error++;
+      }
+    }
+
+    return name;
+  };
+
+  const getStudentNote = name => {
+    let note = 0;
+    let error = 1;
+
+    while (error) {
+      error = 0;
+
+      note = window.prompt('Veuillez saisir la note de ' + name +  '.');
+
+      if (!note.match(new RegExp("[0-9]"))) {
+        alert('Format incorrect. Veuillez rentrer un nombre.');
+        error++; continue;
+      }
+
+      if (note < 0) {
+        alert('La note ne peut pas être inférieure à 0.'); error++;
+      }
+
+      if (note > 20) {
+        alert('Les notes bonus (au dessus de 20) ne sont pas prises en compte.'); error++;
+      }
+    }
+
+    return Math.round(note * 100) / 100;
+  };
+
+  const getNotes = size => {
+    const askForName = confirm('Voulez-vous entrer le nom de chaque élève avant de lui assigner sa note ? (sinon, les notes restent anonymes).');
+    const notes = [];
+
+    for (let i = 0; i < size; i++) {
+        const name = (askForName) ? getStudentName(i) : 'Elève ' + (i + 1);
+        const note = getStudentNote(name);
+        notes.push({ 'name': name, 'note': parseFloat(note) });
+    }
+
+    return notes;
+  };
+
+  const getStats = notes => {
+    let total = 0;
+
+    notes.forEach(student => {
+      total += parseFloat(student.note);
+    });
+
+    const average = total / notes.length;
+
+    notes.push({ 'name': 'Moyenne', 'note': Math.round(average * 100) / 100 });
+
+    return notes.sort((first, second) => first.note < second.note);
+  };
+
+  const display = stats => {
+    let result  = '';
+
+    let greaterThanAverage = true;
+    let totalGreaterThanAverage = 0;
+
+    stats.forEach(student => {
+      let separator = '\r\n';
+
+      if (student.name === 'Moyenne') {
+        separator = '';
+        greaterThanAverage = false;
+      }
+
+      if (greaterThanAverage) {
+        totalGreaterThanAverage++;
+      }
+
+      result += separator + student.name + ' : ' + student.note + '/20' + separator + '\r\n';
+    });
+
+    const message = 'Au total, ' + totalGreaterThanAverage + ' élèves sont au dessus de la moyenne de la classe.';
+
+    alert(result + '\r\n' + message);
+  };
+
+
+  const size = getClassSize();
+  const notes = getNotes(size);
+  const stats = getStats(notes);
+
+  display(stats);
+
+</script>
+
+</body>
+</html>
