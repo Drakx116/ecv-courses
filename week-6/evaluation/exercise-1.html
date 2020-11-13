@@ -47,9 +47,13 @@
         if (!amount) {
           alert('Le nombre d\'article en peut pas être inférieur à 1.'); error++;
         }
+
+        if (amount.includes('.')) {
+          alert('Veuillez préciser un nombre entier.'); error++;
+        }
       }
 
-      return Math.floor(amount);
+      return amount;
     };
 
     const getTaxeRate = () => {
@@ -66,8 +70,12 @@
           error++; continue;
         }
 
-        if (tax < 0) {
+        if (!tax) {
           alert('Nombre trop petit. La prix ne peut pas être nul ou négatif.'); error++;
+        }
+
+        if (tax.includes('.')) {
+          alert('Veuillez préciser un nombre entier.'); error++;
         }
       }
 
