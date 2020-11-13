@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Exercise 5 </title>
+</head>
+<body>
+
+<script>
+
+  // Functions
+
+  const getLimit = () => {
+    let limit = 0;
+    let error = 1;
+
+    while (error) {
+      error = 0;
+
+      limit = window.prompt('Veuillez saisir un nombre entier (au moins 1).');
+
+      if (!limit.match(new RegExp("[0-9]"))) {
+        alert('Format incorrect. Veuillez rentrer un nombre entier (au moins 1).');
+        error++; continue;
+      }
+
+      if (limit < 1) {
+        alert('Nombre trop petit. La taille du tableau ne peut pas être inférieure à 3.'); error++;
+      }
+    }
+
+    return limit;
+  };
+
+
+  const getFactorial = limit => {
+    let factorial = 1;
+    while (limit > 1) {
+      factorial *= parseInt(limit);
+      limit--;
+    }
+
+    return factorial;
+  }
+
+  const limit = getLimit();
+  const factorial = getFactorial(limit);
+
+  alert('La factorielle de ' + limit + ' vaut ' + factorial + '.');
+
+</script>
+</body>
+</html>
