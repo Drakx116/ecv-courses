@@ -14,7 +14,7 @@
     while (error) {
       error = 0;
 
-      number = window.prompt('Veuillez saisir un nombre.');
+      number = window.prompt('Veuillez saisir un nombre entier positif afin de générer sa table de multiplication.');
 
       if (!number.match(new RegExp("[0-9]"))) {
         alert('Format incorrect. Veuillez rentrer un nombre entier (au moins 1).');
@@ -24,9 +24,13 @@
       if (!number) {
         alert('Le nombre ne peut pas être inférieur à 1.'); error++;
       }
+
+      if (number.includes('.')) {
+        alert('Veuillez préciser un nombre entier.'); error++;
+      }
     }
 
-    return Math.floor(number);
+    return number;
   };
 
   const getMultiplicationTable = number => {
