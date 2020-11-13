@@ -44,7 +44,7 @@
           error++; continue;
         }
 
-        if (!amount) {
+        if (amount <= 0) {
           alert('Le nombre d\'article en peut pas être inférieur à 1.'); error++;
         }
 
@@ -92,7 +92,7 @@
 
     const total = calculateTaxPrice(price, amount, tax);
 
-    alert('Le prix total pour ' + amount + ' articles pour un prix de base de ' + price + '€ avec une taxe de ' + tax + '% est de ' + total + '€.');
+    alert('Le prix total pour ' + amount + ' articles pour un prix de base de ' + price + '€ (soit ' + price * amount + '€) avec une taxe de ' + tax + '% est de ' + total + '€.');
 
 </script>
 
