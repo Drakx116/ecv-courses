@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Exercise 2 </title>
+</head>
+<body>
+
+<script>
+  const getNumber = () => {
+    let number = 0;
+    let error = 1;
+
+    while (error) {
+      error = 0;
+
+      number = window.prompt('Veuillez saisir un nombre.');
+
+      if (!number.match(new RegExp("[0-9]"))) {
+        alert('Format incorrect. Veuillez rentrer un nombre entier (au moins 1).');
+        error++; continue;
+      }
+
+      if (!number) {
+        alert('Le nombre ne peut pas être inférieur à 1.'); error++;
+      }
+    }
+
+    return Math.floor(number);
+  };
+
+  const getMultiplicationTable = number => {
+    let table = '';
+    for (let i = 1; i <= 10; i++) {
+        table += number + '*' + i  + ' = ' + (i * parseInt(number)) + '\r\n';
+    }
+
+    return table;
+  };
+
+  const number = getNumber();
+  const table = getMultiplicationTable(number);
+
+  alert(table);
+
+</script>
+
+</body>
+</html>
