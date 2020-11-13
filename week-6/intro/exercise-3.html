@@ -17,18 +17,18 @@
     while (error) {
       error = 0;
 
-      size = window.prompt('Veuillez saisir la taille du tableau à remplir.');
+      size = window.prompt('Veuillez saisir la taille du tableau à remplir (entre 3 et 10).');
 
       if (!size.match(new RegExp("[0-9]"))) {
         alert('Format incorrect. Veuillez rentrer un nombre (entre 3 et 10).');
         error++; continue;
       }
 
-      if (size < 4) {
+      if (size < 3) {
         alert('Nombre trop petit. La taille du tableau ne peut pas être inférieure à 3.'); error++;
       }
 
-      if (size > 10) {
+      if (size > 11) {
         alert('Nombre trop grand. La taille du tableau ne peut pas être supérieur à 10.'); error++;
       }
     }
