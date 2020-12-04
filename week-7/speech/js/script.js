@@ -18,15 +18,8 @@ recognition.addEventListener('result', event => {
 
   // End of the sentence
   if (event.results[0].isFinal) {
-    const sentence = document.createElement('div');
-    const text = document.createElement('p');
-
-    text.textContent = prompt;
-
-    sentence.setAttribute('class', 'sentence');
-    sentence.appendChild(text);
-
-    document.getElementById('chat').appendChild(sentence);
+    const message = new Message();
+    message.create(prompt);
   }
 });
 

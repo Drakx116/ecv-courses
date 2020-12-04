@@ -1,0 +1,12 @@
+#chat {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #c89f59;
+    flex-direction: column;
+}
+
+.sentence {
+    padding: 0.5em;
+    font-size: 14px;
+}
